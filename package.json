@@ -1,13 +1,13 @@
 {
     "name": "breathe99.com",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "app.js",
     "repository": "git@github.com:breathe99/breathe99.com.git",
     "author": "themezzilla <crollins199@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "dev": "concurrently 'nodemon index.js' 'webpack --watch -p'",
-        "start": "node index.js",
+        "dev": "concurrently 'nodemon app.js' 'webpack --watch -p'",
+        "start": "node app.js",
         "build": "webpack -p",
         "deploy": ""
     },
