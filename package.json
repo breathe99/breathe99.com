@@ -40,6 +40,8 @@
         "morgan": "^1.8.1",
         "node-gyp": "^3.5.0",
         "serve-favicon": "^2.3.2",
+        "shipit-cli": "^2.0.0",
+        "shipit-deploy": "^2.4.0",
         "x-ray": "^2.3.1"
     }
 }
