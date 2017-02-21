@@ -1,9 +1,15 @@
 # breathe99.com
+Install dependencies:  
+`yarn`
 
-To work locally: `yarn dev`
+Work locally (server + webpack):  
+`yarn dev`
 
-To start the server: `yarn start`
+Start the server:  
+`yarn start`
 
-To build the site: `yarn build`
+Build the site:  
+`yarn build`
 
-To deploy to production (not working yet): `yarn deploy`
+Deploy to production:  
+`yarn deploy`
