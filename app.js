@@ -75,7 +75,7 @@ app.use(function(err, req, res, next) {
 //module.exports = app;
 
 // Adding server listen chunk from formerly ./bin/www
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '8080');
 app.set('port', port);
 
 /**
