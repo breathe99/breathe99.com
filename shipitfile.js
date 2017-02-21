@@ -4,7 +4,7 @@ module.exports = function (shipit) {
     shipit.initConfig({
         default: {
             workspace: '/tmp/breathe99',
-            deployTo: '/usr/share/nginx/html',
+            deployTo: '/usr/share/nginx/html_root',
             dirToCopy: './',
             repositoryUrl: 'https://github.com/breathe99/breathe99.com',
             ignores: ['.git', 'node_modules'],
