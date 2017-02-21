@@ -20,4 +20,7 @@ module.exports = function (shipit) {
 
     });
 
+    shipit.task('post-deploy', function () {
+      return shipit.remote('bash post_deploy.sh');
+    });
 };

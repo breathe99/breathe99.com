@@ -9,7 +9,7 @@
         "dev": "concurrently 'nodemon app.js' 'webpack --watch -p'",
         "start": "node app.js",
         "build": "webpack -p",
-        "deploy": ""
+        "deploy": "shipit production deploy && shipit production post-deploy"
     },
     "devDependencies": {
         "autoprefixer": "^6.7.3",
