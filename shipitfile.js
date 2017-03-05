@@ -1,4 +1,4 @@
-module.exports = function (shipit) {
+module.exports = function(shipit) {
     require('shipit-deploy')(shipit);
 
     shipit.initConfig({
@@ -20,7 +20,7 @@ module.exports = function (shipit) {
 
     });
 
-    shipit.task('post-deploy', function () {
-      return shipit.remote('bash post_deploy.sh');
+    shipit.task('post-deploy', function() {
+        return shipit.remote('bash post_deploy.sh');
     });
 };
