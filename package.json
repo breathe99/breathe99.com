@@ -17,14 +17,16 @@
         "babel-loader": "^6.3.1",
         "babel-preset-es2015": "^6.22.0",
         "concurrently": "^3.3.0",
+        "css-loader": "^0.26.2",
         "extract-text-webpack-plugin": "2.0.0-beta",
+        "node-sass": "^4.5.0",
         "nodemon": "^1.11.0",
         "postcss-loader": "^1.3.0",
         "precss": "^1.4.0",
         "sass-loader": "^6.0.0",
         "style-loader": "^0.13.1",
         "url-loader": "^0.5.7",
-        "webpack": "beta"
+        "webpack": "^2.2.1"
     },
     "dependencies": {
         "async": "^2.1.4",

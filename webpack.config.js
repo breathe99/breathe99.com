@@ -59,7 +59,6 @@ const config = {
     plugins: [
         //new DashboardPlugin(),
         new ExtractTextPlugin("./public/dist/styles.css")
-        //extractCommons
     ]
 }
 
