@@ -13,6 +13,10 @@ body {
 .top {
     display: flex;
     justify-content: space-between;
+    .logo {
+      height: 100px;
+      margin-left: 20px;
+    }
     &__first {}
     &__last {}
 }
@@ -20,9 +24,15 @@ body {
 .middle {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    img {
+      width: 100%;
+      flex: 1;
+    }
     &__render {
         flex: 1;
         text-align: center;
+        margin: 0 20px;
     }
 }
 

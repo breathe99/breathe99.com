@@ -31,8 +31,8 @@ const config = {
         }, {
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
-                fallbackLoader: 'style-loader',
-                loader: [
+                fallback: 'style-loader',
+                use: [
                     'css-loader',
                     {
                         loader: 'postcss-loader?sourceMap=false',
