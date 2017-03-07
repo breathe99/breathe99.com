@@ -14,8 +14,8 @@ body {
     display: flex;
     justify-content: space-between;
     .logo {
-      height: 100px;
-      margin-left: 20px;
+        height: 60px;
+        margin-left: 20px;
     }
     &__first {}
     &__last {}
@@ -26,8 +26,8 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     img {
-      width: 100%;
-      flex: 1;
+        width: 100%;
+        flex: 1;
     }
     &__render {
         flex: 1;
