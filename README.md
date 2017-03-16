@@ -13,6 +13,6 @@ Build the site:
 
 Deploy to production:  
 `$ yarn deploy`
- 
-Rollback production:
+
+Rollback production:  
 `$ yarn rollback`
