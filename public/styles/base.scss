@@ -1,3 +1,6 @@
+// Import helpers
+@import "./breakpoints";
+
 body {
     margin: 0;
     height: 100vh;
@@ -27,8 +30,12 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+
+    @include mobile_tablet {
+      flex-direction: column;
+    }
     img {
-        width: 100%;
+        width: 500px;
         flex: 1;
     }
     &__column {
@@ -39,6 +46,7 @@ body {
     .text {
       text-align: left;
     }
+
 }
 
 .bottom {
