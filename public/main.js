@@ -14,6 +14,9 @@ const joinText = document.querySelector('#join-text');
 const defaultText = document.querySelector('#default-text');
 const body = document.querySelector('body');
 const menuItems = document.querySelectorAll('.menu a');
+const submit = document.querySelector('#submit');
+const name = document.querySelector('#name');
+const email = document.querySelector('#email');
 
 menuItems.forEach(el => {
   el.addEventListener('click', function() {
@@ -24,6 +27,22 @@ menuItems.forEach(el => {
       body.classList.toggle('active')
     }
   })
+});
+
+submit.addEventListener('click', function() {
+  fetch('/emails', {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: 'name=' + name.value + '&email=' + email.value
+  }).then(function(response) {
+    console.log(response);
+	  console.log('worked!');
+  }).catch(function(err) {
+  	console.log(err);
+  });
 });
 
 about.addEventListener('click', function() {

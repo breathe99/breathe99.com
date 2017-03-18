@@ -35,8 +35,9 @@ app.post('/emails', (req, res) => {
         db.get().collection('emails').save(req.body, (err, result) => {
             if (err) return console.log(err);
 
+            res.send(200);
             console.log('saved to database');
-            res.redirect('/');
+            //res.redirect('/');
         });
     });
 });

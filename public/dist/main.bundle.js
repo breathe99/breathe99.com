@@ -133,6 +133,9 @@ var joinText = document.querySelector('#join-text');
 var defaultText = document.querySelector('#default-text');
 var body = document.querySelector('body');
 var menuItems = document.querySelectorAll('.menu a');
+var submit = document.querySelector('#submit');
+var name = document.querySelector('#name');
+var email = document.querySelector('#email');
 
 menuItems.forEach(function (el) {
   el.addEventListener('click', function () {
@@ -141,6 +144,22 @@ menuItems.forEach(function (el) {
     } else {
       body.classList.toggle('active');
     }
+  });
+});
+
+submit.addEventListener('click', function () {
+  fetch('/emails', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: 'name=' + name.value + '&email=' + email.value
+  }).then(function (response) {
+    console.log(response);
+    console.log('worked!');
+  }).catch(function (err) {
+    console.log(err);
   });
 });
 
