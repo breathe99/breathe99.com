@@ -6,7 +6,7 @@
     "author": "themezzilla <crollins199@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "dev": "concurrently 'nodemon app.js' 'webpack --watch -p'",
+        "dev": "concurrently 'nodemon app.js' 'webpack --watch'",
         "start": "node app.js",
         "build": "webpack -p",
         "deploy": "shipit production deploy && shipit production post-deploy",
