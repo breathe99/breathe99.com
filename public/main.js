@@ -35,13 +35,17 @@ join.addEventListener('click', function() {
 });
 
 function switchDisplay(clickedEl, targetEl, elToHide) {
-  menuItems.forEach(el => {el.classList.remove('active');})
-  defaultText.style.display = 'none';
   if (clickedEl.classList.contains('active')) {
-    // Do nothing
+    // Clear state
+    menuItems.forEach(el => {el.classList.remove('active');})
+    defaultText.style.display = 'block';
+    body.classList.remove('active');
+    targetEl.classList.remove('active');
   }
   else {
-    clickedEl.classList.toggle('active');
+    menuItems.forEach(el => {el.classList.remove('active');})
+    defaultText.style.display = 'none';
+    clickedEl.classList.add('active');
     elToHide.classList.remove('active');
     targetEl.classList.add('active');
     body.classList.add('active');

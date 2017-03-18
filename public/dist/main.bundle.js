@@ -140,12 +140,6 @@ menuItems.forEach(function (el) {
       // do nothing
     } else {
       body.classList.toggle('active');
-      // let bodyBackground = anime({
-      //   targets: 'body',
-      //   background: 'linear-gradient(to bottom, rgba(146,205,217,1) 0%, rgba(246,246,246,1) 92%, rgba(255,255,255,1) 100%)',
-      //   duration: 1200,
-      //   easing: 'linear'
-      // });
     }
   });
 });
@@ -159,14 +153,20 @@ join.addEventListener('click', function () {
 });
 
 function switchDisplay(clickedEl, targetEl, elToHide) {
-  menuItems.forEach(function (el) {
-    el.classList.remove('active');
-  });
-  defaultText.style.display = 'none';
   if (clickedEl.classList.contains('active')) {
-    // Do nothing
+    // Clear state
+    menuItems.forEach(function (el) {
+      el.classList.remove('active');
+    });
+    defaultText.style.display = 'block';
+    body.classList.remove('active');
+    targetEl.classList.remove('active');
   } else {
-    clickedEl.classList.toggle('active');
+    menuItems.forEach(function (el) {
+      el.classList.remove('active');
+    });
+    defaultText.style.display = 'none';
+    clickedEl.classList.add('active');
     elToHide.classList.remove('active');
     targetEl.classList.add('active');
     body.classList.add('active');
