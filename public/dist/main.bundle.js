@@ -136,6 +136,7 @@ var menuItems = document.querySelectorAll('.menu a');
 var submit = document.querySelector('#submit');
 var name = document.querySelector('#name');
 var email = document.querySelector('#email');
+var messages = document.querySelector('.message');
 
 menuItems.forEach(function (el) {
   el.addEventListener('click', function () {
@@ -148,20 +149,39 @@ menuItems.forEach(function (el) {
 });
 
 submit.addEventListener('click', function () {
-  fetch('/emails', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: 'name=' + name.value + '&email=' + email.value
-  }).then(function (response) {
-    console.log(response);
-    console.log('worked!');
-  }).catch(function (err) {
-    console.log(err);
-  });
+  // Validate the Form
+  if (name.value == "" || email.value == "") {
+    messages.classList.add('failed');
+    messages.innerHTML = 'Please fill out all fields';
+    return false;
+  } else if (!validateEmail(email.value)) {
+    messages.classList.add('failed');
+    messages.innerHTML = 'Please enter a valid email';
+    return false;
+  } else {
+    fetch('/emails', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: 'name=' + name.value + '&email=' + email.value
+    }).then(function (response) {
+      messages.classList.add('success');
+      messages.innerHTML = 'Thank you!';
+      email.value = "";
+      name.value = "";
+    }).catch(function (err) {
+      console.log(err);
+    });
+  }
 });
+
+// From http://stackoverflow.com/questions/46155/validate-email-address-in-javascript
+function validateEmail(email) {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
 
 about.addEventListener('click', function () {
   switchDisplay(this, aboutText, joinText);

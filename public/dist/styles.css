@@ -137,6 +137,12 @@ p {
       font-weight: normal;
       margin-bottom: 25px;
       margin-top: 0; }
+  .middle .message {
+    font-size: 16px; }
+    .middle .message.failed {
+      color: red; }
+    .middle .message.success {
+      color: green; }
 
 input[type='text'], input[type='email'] {
   display: block;
