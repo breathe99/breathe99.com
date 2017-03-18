@@ -140,12 +140,12 @@ menuItems.forEach(function (el) {
       // do nothing
     } else {
       body.classList.toggle('active');
-      var bodyBackground = __WEBPACK_IMPORTED_MODULE_1_animejs___default()({
-        targets: 'body',
-        background: 'linear-gradient(to bottom, rgba(146,205,217,1) 0%, rgba(246,246,246,1) 92%, rgba(255,255,255,1) 100%)',
-        duration: 1200,
-        easing: 'linear'
-      });
+      // let bodyBackground = anime({
+      //   targets: 'body',
+      //   background: 'linear-gradient(to bottom, rgba(146,205,217,1) 0%, rgba(246,246,246,1) 92%, rgba(255,255,255,1) 100%)',
+      //   duration: 1200,
+      //   easing: 'linear'
+      // });
     }
   });
 });
