@@ -64,6 +64,10 @@ p {
         height: 60px;
         margin-left: 20px;
         fill: $gray;
+
+        &:hover {
+          fill: #e6e6e6;
+        }
     }
     .menu {
       text-align: right;
@@ -137,12 +141,13 @@ p {
       p {
         margin-top: 0;
         margin-bottom: 15px;
+        line-height: 24px;
       }
       h1 {
         color: $grayDark;
         font-size: 49px;
         font-weight: normal;
-        margin-bottom: 25px;
+        margin-bottom: 10px;
         margin-top: 0;
       }
     }
@@ -184,6 +189,7 @@ input[type='email'] {
   border-radius: 3px;
   cursor: pointer;
   transition: all .2s;
+  font-weight: bold;
 
   &:hover {
     background-color: white;

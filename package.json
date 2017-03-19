@@ -9,7 +9,7 @@
         "dev": "concurrently 'nodemon app.js' 'webpack --watch'",
         "start": "node app.js",
         "build": "webpack -p",
-        "deploy": "shipit production deploy && shipit production post-deploy",
+        "deploy": "webpack -p && shipit production deploy && shipit production post-deploy",
         "rollback": "shipit production rollback"
     },
     "devDependencies": {
