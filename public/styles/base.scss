@@ -123,8 +123,12 @@ body {
       flex-direction: column;
     }
     img {
-        width: 500px;
+        width: 100%;
         flex: 1;
+
+        @include mobile_tablet {
+          margin-bottom: 10px;
+        }
     }
     &__column {
         flex: 1;
