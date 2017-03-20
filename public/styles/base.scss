@@ -208,7 +208,7 @@ input[type='email'] {
     justify-content: space-between;
     color: $grayMid;
     font-size: 17px;
-    font-family: 'Raleway', sans-serif;
+    //font-family: 'Raleway', sans-serif;
 
     @include mobile_tablet {
       align-items: center;
