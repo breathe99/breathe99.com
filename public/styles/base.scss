@@ -2,6 +2,7 @@
 @import "./breakpoints";
 @import "./color";
 @import "./type";
+@import "./animation";
 
 body {
     margin: 0;
@@ -96,6 +97,7 @@ body {
 
     #about-text {
       display: none;
+      opacity: 0;
 
       &.active {
         display: block;
@@ -105,8 +107,12 @@ body {
         font-size: 18px;
       }
     }
+    #default-text {
+      opacity: 0;
+    }
     #join-text {
       display: none;
+      opacity: 0;
 
       &.active {
         display: block;

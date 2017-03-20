@@ -9,6 +9,7 @@ const iframe = document.querySelector('iframe');
 
 const about = document.querySelector('#about');
 const join = document.querySelector('#join');
+const allText = document.querySelectorAll('.text div');
 const aboutText = document.querySelector('#about-text');
 const joinText = document.querySelector('#join-text');
 const defaultText = document.querySelector('#default-text');
@@ -78,17 +79,20 @@ join.addEventListener('click', function() {
 function switchDisplay(clickedEl, targetEl, elToHide) {
   if (clickedEl.classList.contains('active')) {
     // Clear state
+    allText.forEach(el => {el.classList.remove('slideUp');})
     menuItems.forEach(el => {el.classList.remove('active');})
     defaultText.style.display = 'block';
+    defaultText.classList.add('slideUp');
     body.classList.remove('active');
     targetEl.classList.remove('active');
   }
   else {
+    allText.forEach(el => {el.classList.remove('slideUp');})
     menuItems.forEach(el => {el.classList.remove('active');})
     defaultText.style.display = 'none';
     clickedEl.classList.add('active');
     elToHide.classList.remove('active');
-    targetEl.classList.add('active');
+    targetEl.classList.add('active', 'slideUp');
     body.classList.add('active');
   }
 }

@@ -1,0 +1,9 @@
+// Animations
+.slideUp {
+  animation: slideUp .8s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(0); opacity: 0;}
+  to { transform: translateY(-10px); opacity: 1;}
+}
