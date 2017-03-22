@@ -1,11 +1,5 @@
 import './styles/base.scss';
-import anime from 'animejs';
-
-const iframe = document.querySelector('iframe');
-
-// iframe.addEventListener('load', function() {
-//   this.closest('.shot-image-sec .logo').setAttribute('style', 'display:none');
-// });
+import 'whatwg-fetch';
 
 const about = document.querySelector('#about');
 const join = document.querySelector('#join');
@@ -20,7 +14,7 @@ const name = document.querySelector('#name');
 const email = document.querySelector('#email');
 const messages = document.querySelector('.message');
 
-menuItems.forEach(el => {
+Array.from(menuItems).forEach(el => {
   el.addEventListener('click', function() {
     if (body.classList.contains('active')) {
       // do nothing
@@ -79,16 +73,16 @@ join.addEventListener('click', function() {
 function switchDisplay(clickedEl, targetEl, elToHide) {
   if (clickedEl.classList.contains('active')) {
     // Clear state
-    allText.forEach(el => {el.classList.remove('slideUp');})
-    menuItems.forEach(el => {el.classList.remove('active');})
+    Array.from(allText).forEach(el => {el.classList.remove('slideUp');})
+    Array.from(menuItems).forEach(el => {el.classList.remove('active');})
     defaultText.style.display = 'block';
     defaultText.classList.add('slideUp');
     body.classList.remove('active');
     targetEl.classList.remove('active');
   }
   else {
-    allText.forEach(el => {el.classList.remove('slideUp');})
-    menuItems.forEach(el => {el.classList.remove('active');})
+    Array.from(allText).forEach(el => {el.classList.remove('slideUp');})
+    Array.from(menuItems).forEach(el => {el.classList.remove('active');})
     defaultText.style.display = 'none';
     clickedEl.classList.add('active');
     elToHide.classList.remove('active');

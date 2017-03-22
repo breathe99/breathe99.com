@@ -46,6 +46,7 @@
         "serve-favicon": "^2.3.2",
         "shipit-cli": "^2.0.0",
         "shipit-deploy": "^2.4.0",
+        "whatwg-fetch": "^2.0.3",
         "x-ray": "^2.3.1"
     }
 }
