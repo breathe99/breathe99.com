@@ -8,16 +8,16 @@ const joinText = document.querySelector('#about-text');
 const body = document.querySelector('body');
 const menuItems = document.querySelectorAll('.menu a');
 
-[...menuItems].forEach(el => {
-  el.addEventListener('click', function() {
-    if (body.classList.contains('active')) {
-      // do nothing
-    }
-    else {
-      body.classList.toggle('active')
-    }
-  })
-});
+// [...menuItems].forEach(el => {
+//   el.addEventListener('click', function() {
+//     if (body.classList.contains('active')) {
+//       // do nothing
+//     }
+//     else {
+//       body.classList.toggle('active')
+//     }
+//   })
+// });
 
 mask.addEventListener('click', function() {
   switchDisplay(this, maskText, joinText);

@@ -92,15 +92,16 @@ var joinText = document.querySelector('#about-text');
 var body = document.querySelector('body');
 var menuItems = document.querySelectorAll('.menu a');
 
-[].concat(_toConsumableArray(menuItems)).forEach(function (el) {
-  el.addEventListener('click', function () {
-    if (body.classList.contains('active')) {
-      // do nothing
-    } else {
-      body.classList.toggle('active');
-    }
-  });
-});
+// [...menuItems].forEach(el => {
+//   el.addEventListener('click', function() {
+//     if (body.classList.contains('active')) {
+//       // do nothing
+//     }
+//     else {
+//       body.classList.toggle('active')
+//     }
+//   })
+// });
 
 mask.addEventListener('click', function () {
   switchDisplay(this, maskText, joinText);
