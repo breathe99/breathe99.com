@@ -18,12 +18,12 @@ ul {
 p {
   font-size: 21px;
   color: #666666;
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Noto Sans', sans-serif; }
 
 /* Setup */
 html {
   font-size: 100%;
-  font-family: 'futura-pt', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-variant-numeric: lining-nums;
   -webkit-font-feature-settings: 'lnum';
           font-feature-settings: 'lnum';
@@ -140,7 +140,7 @@ body {
   .top .logo {
     height: 60px;
     margin-left: 20px;
-    fill: #808080;
+    fill: #999999;
     -webkit-transition: fill 0.2s;
     transition: fill 0.2s; }
     .top .logo:hover {
@@ -153,7 +153,7 @@ body {
       font-weight: 500;
       line-height: 21px;
       display: block;
-      color: #808080;
+      color: #999999;
       -webkit-transition: color .2s;
       transition: color .2s; }
       .top .menu a:hover {
@@ -270,7 +270,7 @@ input[type='email'] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  color: #666666;
+  color: #999999;
   font-size: 17px; }
   @media only screen and (max-width: 992px) {
     .bottom {
@@ -284,9 +284,14 @@ input[type='email'] {
   .bottom__first {
     margin: 5px 0; }
     .bottom__first a {
-      color: #666666; }
+      color: #999999; }
       .bottom__first a:hover {
         text-decoration: underline;
         cursor: pointer; }
   .bottom__last {
     margin: 5px 0; }
+    .bottom__last a {
+      color: #999999; }
+      .bottom__last a:hover {
+        text-decoration: underline;
+        cursor: pointer; }

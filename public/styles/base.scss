@@ -206,7 +206,7 @@ input[type='email'] {
 .bottom {
     display: flex;
     justify-content: space-between;
-    color: $grayMid;
+    color: $gray;
     font-size: 17px;
     //font-family: 'Raleway', sans-serif;
 
@@ -217,7 +217,7 @@ input[type='email'] {
     &__first {
       margin: 5px 0;
       a {
-        color: $grayMid;
+        color: $gray;
         &:hover {
           text-decoration: underline;
           cursor: pointer;
@@ -226,5 +226,12 @@ input[type='email'] {
     }
     &__last {
       margin: 5px 0;
+      a {
+        color: $gray;
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
     }
 }
