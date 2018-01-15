@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var db = require('./db');
 var debug = require('debug')('breathe99:server');
 var http = require('http');
 
@@ -28,19 +27,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/map', map);
-
-// Form handling
-app.post('/emails', (req, res) => {
-    db.connect(function() {
-        db.get().collection('emails').save(req.body, (err, result) => {
-            if (err) return console.log(err);
-
-            res.send(200);
-            console.log('saved to database');
-            //res.redirect('/');
-        });
-    });
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

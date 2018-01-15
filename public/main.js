@@ -1,20 +1,14 @@
 import './styles/base.scss';
-import 'whatwg-fetch';
 
+const mask = document.querySelector('#mask');
 const about = document.querySelector('#about');
-const join = document.querySelector('#join');
 const allText = document.querySelectorAll('.text div');
-const aboutText = document.querySelector('#about-text');
-const joinText = document.querySelector('#join-text');
-const defaultText = document.querySelector('#default-text');
+const maskText = document.querySelector('#mask-text');
+const joinText = document.querySelector('#about-text');
 const body = document.querySelector('body');
 const menuItems = document.querySelectorAll('.menu a');
-const submit = document.querySelector('#submit');
-const name = document.querySelector('#name');
-const email = document.querySelector('#email');
-const messages = document.querySelector('.message');
 
-Array.from(menuItems).forEach(el => {
+[...menuItems].forEach(el => {
   el.addEventListener('click', function() {
     if (body.classList.contains('active')) {
       // do nothing
@@ -25,68 +19,26 @@ Array.from(menuItems).forEach(el => {
   })
 });
 
-submit.addEventListener('click', function() {
-  // Validate the Form
-  if (name.value == "" || email.value == "") {
-    messages.classList.add('failed');
-    messages.innerHTML = 'Please fill out all fields';
-    return false;
-  }
-  else if (!validateEmail(email.value)) {
-    messages.classList.add('failed');
-    messages.innerHTML = 'Please enter a valid email';
-    return false;
-  }
-  else {
-    fetch('/emails', {
-      method: 'POST',
-      headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: 'name=' + name.value + '&email=' + email.value
-    }).then(function(response) {
-      messages.classList.add('success');
-      messages.innerHTML = 'Thank you!';
-      email.value = "";
-      name.value = "";
-    }).catch(function(err) {
-    	console.log(err);
-    });
-  }
+mask.addEventListener('click', function() {
+  switchDisplay(this, maskText, joinText);
 });
-
-// From http://stackoverflow.com/questions/46155/validate-email-address-in-javascript
-function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-}
 
 about.addEventListener('click', function() {
-  switchDisplay(this, aboutText, joinText);
+  switchDisplay(this, joinText, maskText);
 });
 
-join.addEventListener('click', function() {
-  switchDisplay(this, joinText, aboutText);
-});
-
-function switchDisplay(clickedEl, targetEl, elToHide) {
+const switchDisplay = (clickedEl, targetEl, elToHide) => {
   if (clickedEl.classList.contains('active')) {
     // Clear state
-    Array.from(allText).forEach(el => {el.classList.remove('slideUp');})
-    Array.from(menuItems).forEach(el => {el.classList.remove('active');})
-    defaultText.style.display = 'block';
-    defaultText.classList.add('slideUp');
-    body.classList.remove('active');
+    [...allText].forEach(el => {el.classList.remove('slideUp');});
+    [...menuItems].forEach(el => {el.classList.remove('active');});
     targetEl.classList.remove('active');
   }
   else {
-    Array.from(allText).forEach(el => {el.classList.remove('slideUp');})
-    Array.from(menuItems).forEach(el => {el.classList.remove('active');})
-    defaultText.style.display = 'none';
+    [...allText].forEach(el => {el.classList.remove('slideUp');});
+    [...menuItems].forEach(el => {el.classList.remove('active');});
     clickedEl.classList.add('active');
     elToHide.classList.remove('active');
     targetEl.classList.add('active', 'slideUp');
-    body.classList.add('active');
   }
 }

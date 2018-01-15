@@ -102,6 +102,14 @@ body {
     max-width: 900px;
     margin: auto;
 
+    #mask-text {
+      display: none;
+      opacity: 0;
+
+      &.active {
+        display: block;
+      }
+    }
     #about-text {
       display: none;
       opacity: 0;
@@ -113,9 +121,6 @@ body {
       p {
         font-size: 18px;
       }
-    }
-    #default-text {
-      opacity: 0;
     }
     #join-text {
       display: none;
@@ -175,23 +180,20 @@ input[type='email'] {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   border: 1px solid $grayMid;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   width: 250px;
   border-radius: 2px;
   padding: 7px;
   color: $grayMid;
-
+  
   &:focus {
     outline: none;
     border-color: darken($babyBlue, 10);
   }
 }
 
-input[type='email'] {
-  margin-bottom: 20px;
-}
-
-.button {
+.button,
+.close {
   padding: 10px 20px;
   border: none;
   background-color: $purple;

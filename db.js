@@ -7,7 +7,7 @@ var state = {
 function connect(done) {
   if (state.db) return done();
 
-  MongoClient.connect('mongodb://trunk:trunkRoot@ds019482.mlab.com:19482/trunk-production', function(err, db) {
+  MongoClient.connect('', function(err, db) {
     if (err) return done(err);
     state.db = db;
     done();
