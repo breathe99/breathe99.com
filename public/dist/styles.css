@@ -145,21 +145,38 @@ body {
     transition: fill 0.2s; }
     .top .logo:hover {
       fill: #e6e6e6; }
-  .top .menu {
-    text-align: right; }
-    .top .menu a {
-      margin-bottom: 18px;
-      font-size: 36px;
-      font-weight: 500;
-      line-height: 21px;
-      display: block;
-      color: #999999;
-      -webkit-transition: color .2s;
-      transition: color .2s; }
-      .top .menu a:hover {
-        color: #e6e6e6; }
-      .top .menu a.active {
-        color: white; }
+  .top .button {
+    color: #ffffff; }
+
+.menu {
+  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+  .menu a {
+    margin-bottom: 18px;
+    margin-left: 20px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 21px;
+    display: block;
+    color: #999999;
+    -webkit-transition: color .2s;
+    transition: color .2s; }
+    .menu a:hover {
+      color: #e6e6e6; }
+    .menu a.active {
+      color: white; }
 
 .middle {
   display: -webkit-box;
@@ -248,17 +265,14 @@ input[type='email'] {
 
 .button {
   padding: 10px 20px;
-  border: 1px solid #666666;
-  background-color: transparent;
-  font-family: 'Raleway', sans-serif;
+  border: none;
+  background-color: #7985cd;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 18px;
   border-radius: 3px;
   cursor: pointer;
   -webkit-transition: all .2s;
   transition: all .2s; }
-  .button:hover {
-    border-color: #6cbccc;
-    color: #6cbccc; }
 
 ::-webkit-input-placeholder {
   color: #666666; }
