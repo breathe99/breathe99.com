@@ -130,7 +130,7 @@ body {
     #join-text {
       display: none;
       opacity: 0;
-
+      width: 300px;
       &.active {
         display: block;
       }
@@ -156,7 +156,11 @@ body {
       text-align: left;
       width: 100%;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
+      @include mobile_tablet {
+        justify-content: center;
+        align-items: center;
+      }
       p {
         margin-top: 0;
         margin-bottom: 15px;

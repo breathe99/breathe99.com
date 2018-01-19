@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,8 +73,7 @@
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 1 */,
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86,11 +85,12 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 var mask = document.querySelector('#mask');
 var about = document.querySelector('#about');
-var allText = document.querySelectorAll('.text div');
 var maskText = document.querySelector('#mask-text');
 var joinText = document.querySelector('#about-text');
 var body = document.querySelector('body');
 var menuItems = document.querySelectorAll('.menu a');
+var signUp = document.querySelector('#sign-up');
+var signUpText = document.querySelector('#join-text');
 
 // [...menuItems].forEach(el => {
 //   el.addEventListener('click', function() {
@@ -103,33 +103,44 @@ var menuItems = document.querySelectorAll('.menu a');
 //   })
 // });
 
+var allText = [maskText, joinText, signUpText];
+
 mask.addEventListener('click', function () {
-  switchDisplay(this, maskText, joinText);
+  switchDisplay(this, maskText);
 });
 
 about.addEventListener('click', function () {
-  switchDisplay(this, joinText, maskText);
+  switchDisplay(this, joinText);
 });
 
-var switchDisplay = function switchDisplay(clickedEl, targetEl, elToHide) {
+signUp.addEventListener('click', function () {
+  switchDisplay(this, signUpText);
+});
+
+var switchDisplay = function switchDisplay(clickedEl, targetEl) {
   if (clickedEl.classList.contains('active')) {
     // Clear state
-    [].concat(_toConsumableArray(allText)).forEach(function (el) {
+    [].concat(allText).forEach(function (el) {
       el.classList.remove('slideUp');
+    });
+    [].concat(allText).forEach(function (el) {
+      el.classList.remove('active');
     });
     [].concat(_toConsumableArray(menuItems)).forEach(function (el) {
       el.classList.remove('active');
     });
     targetEl.classList.remove('active');
   } else {
-    [].concat(_toConsumableArray(allText)).forEach(function (el) {
+    [].concat(allText).forEach(function (el) {
       el.classList.remove('slideUp');
+    });
+    [].concat(allText).forEach(function (el) {
+      el.classList.remove('active');
     });
     [].concat(_toConsumableArray(menuItems)).forEach(function (el) {
       el.classList.remove('active');
     });
     clickedEl.classList.add('active');
-    elToHide.classList.remove('active');
     targetEl.classList.add('active', 'slideUp');
   }
 };
