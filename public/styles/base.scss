@@ -98,7 +98,6 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
     width: 100%;
     height: calc(100vh - 200px);
     margin: auto;
@@ -150,7 +149,7 @@ body {
     &__column {
         flex: 1;
         text-align: center;
-        margin: 0 40px;
+        margin: 40px 40px;
     }
     .text {
       text-align: left;
