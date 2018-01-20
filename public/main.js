@@ -1,4 +1,5 @@
 import './styles/base.scss';
+import '../views/index.ejs';
 
 const mask = document.querySelector('#mask');
 const about = document.querySelector('#about');

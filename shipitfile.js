@@ -4,8 +4,8 @@ module.exports = function(shipit) {
     shipit.initConfig({
         default: {
             workspace: '/tmp/breathe99',
-            deployTo: '/usr/share/nginx/html_root',
-            dirToCopy: './',
+            deployTo: '/usr/share/nginx/html',
+            dirToCopy: './public/',
             repositoryUrl: 'https://github.com/breathe99/breathe99.com',
             ignores: ['.git', 'node_modules'],
             keepReleases: 3,
@@ -15,12 +15,18 @@ module.exports = function(shipit) {
 
         },
         production: {
-            servers: 'jake@192.241.152.156'
+            servers: ['jake@192.241.152.156']
+        },
+        staging : {
+            servers: [
+                'root@104.131.28.88',
+                'root@188.166.216.218'
+            ]
         }
 
     });
 
-    shipit.task('post-deploy', function() {
-        return shipit.remote('bash post_deploy.sh');
-    });
+    // shipit.task('post-deploy', function() {
+    //     return shipit.remote('bash post_deploy.sh');
+    // });
 };
