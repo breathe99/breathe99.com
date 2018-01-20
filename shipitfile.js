@@ -4,7 +4,7 @@ module.exports = function(shipit) {
     shipit.initConfig({
         default: {
             workspace: '/tmp/breathe99',
-            deployTo: '/usr/share/nginx/html',
+            deployTo: '/usr/share/nginx/deploy_root',
             dirToCopy: './public/',
             repositoryUrl: 'https://github.com/breathe99/breathe99.com',
             ignores: ['.git', 'node_modules'],
@@ -26,7 +26,7 @@ module.exports = function(shipit) {
 
     });
 
-    // shipit.task('post-deploy', function() {
-    //     return shipit.remote('bash post_deploy.sh');
-    // });
+    shipit.task('post-deploy', function() {
+        return shipit.remote('bash post_deploy.sh');
+    });
 };
