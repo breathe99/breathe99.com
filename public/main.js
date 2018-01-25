@@ -6,7 +6,7 @@ const maskText = document.querySelector('#mask-text');
 const joinText = document.querySelector('#about-text');
 const body = document.querySelector('body');
 const menuItems = document.querySelectorAll('.menu a');
-const signUp = document.querySelector('#sign-up');
+const signUp = document.querySelectorAll('#sign-up');
 const signUpText = document.querySelector('#join-text');
 
 // [...menuItems].forEach(el => {
@@ -29,9 +29,10 @@ mask.addEventListener('click', function() {
 about.addEventListener('click', function() {
   switchDisplay(this, joinText);
 });
-
-signUp.addEventListener('click', function() {
-  switchDisplay(this, signUpText);
+[...signUp].forEach((s) => {
+  s.addEventListener('click', function() {
+    switchDisplay(this, signUpText);
+  });
 });
 
 const switchDisplay = (clickedEl, targetEl) => {

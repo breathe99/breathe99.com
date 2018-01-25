@@ -62,9 +62,6 @@ body {
     }
     &__first {}
     &__last {}
-    .button {
-      color: #ffffff;
-    }
 }
 .menu {
   text-align: right;
@@ -182,6 +179,10 @@ body {
         color: green;
       }
     }
+    .sign-up {
+      color: $purple;
+      cursor: pointer;
+    }
 }
 
 input[type='text'],
@@ -207,10 +208,11 @@ input[type='email'] {
 .close {
   padding: 10px 20px;
   border: none;
-  background-color: $purple;
+  background-color: transparent;
   font-family: 'Noto Sans', sans-serif;
   font-size: 18px;
   border-radius: 3px;
+  border: 1px solid $gray;
   cursor: pointer;
   transition: all .2s;
 
