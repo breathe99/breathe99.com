@@ -3,6 +3,7 @@
 @import "./color";
 @import "./type";
 @import "./animation";
+@import "./video";
 
 body {
     margin: 0;
@@ -103,6 +104,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    &.hide-background {
+      background-size: 0;
+    }
     #mask-text {
       display: none;
       opacity: 0;
@@ -147,6 +151,10 @@ body {
         flex: 1;
         text-align: center;
         margin: 40px 40px;
+
+        &.hide-text {
+          display: none !important;
+        }
     }
     .text {
       text-align: left;

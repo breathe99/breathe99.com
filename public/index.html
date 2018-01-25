@@ -36,8 +36,8 @@
         <a id="sign-up" class="button" href="#">sign up</a>
       </div>
     </div>
-    <div class="middle">
-      <div class="middle__column text">
+    <div class="middle hide-background">
+      <div class="middle__column text hide-text">
         <div id="mask-text">
           <p>The B99 Respirator is a protective, lightweight mask - reimagined in form & function</p>
           <p>A comfortable silicone seal and replaceable N99 filters achieve the highest level of protection. A smart, pressure-sensing circuit provides saftey alerts to ensure optimal performance.</p>
@@ -98,6 +98,9 @@
           </div>
         </div>
       </div>
+      <div class="video-wrapper">
+        <iframe id="b99-video" width="560" height="315" src="https://www.youtube.com/embed/eUgJZr4lAqI?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
     </div>
     <div class="bottom">
       <div class="bottom__first">
@@ -105,7 +108,7 @@
       </div>
       <div class="bottom__last">
         breathe99 LLC | &copy; 2017 |
-        <a href="">CN</a>
+        <a href="http://cn.breathe99.com">CN</a>
       </div>
     </div>
   </div>
@@ -115,6 +118,7 @@
   </script>
   <script type='text/javascript' src='https://my.sendinblue.com/public/theme/version4/assets/js/src/subscribe-validate.js?v=1509617138'></script>
   <script src="dist/main.bundle.js"></script>
+  <script src="widgetapi.js"></script>
   <script>
     (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -125,6 +129,28 @@
 
     ga('create', 'UA-93920561-1', 'auto');
     ga('send', 'pageview');
+  </script>
+  <script>
+    var player;
+    player = new YT.Player('b99-video', {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+    });
+    function hideVideo() {
+      var middle = document.querySelector('.middle');
+      var middleText = document.querySelector('.middle__column');
+      var video = document.querySelector('.video-wrapper');
+
+      middle.classList.remove('hide-background');
+      middleText.classList.remove('hide-text');
+      video.style.display = 'none';
+    }
+    function onPlayerStateChange(event) {
+      if (event.data === 0) {
+        hideVideo();
+      }
+    }
   </script>
 </body>
 
