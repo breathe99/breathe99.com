@@ -120,24 +120,32 @@ body {
     }
     #mask-text {
       display: none;
-      opacity: 0;
+      opacity: 1;
       width: 300px;
-      transform: translateY(10px);
       background: linear-gradient(to right, rgba(255,255,255,1) 20%,rgba(255,255,255,0) 100%);
       padding: 50px;
       &.active {
         display: block;
       }
+      p,
+      div {
+        transform: translateY(10px);
+        opacity: 0;
+      }
     }
     #about-text {
       display: none;
-      opacity: 0;
+      opacity: 1;
       width: 300px;
-      transform: translateY(10px);
       background: linear-gradient(to right, rgba(255,255,255,1) 20%,rgba(255,255,255,0) 100%);
       padding: 50px;
       &.active {
         display: block;
+      }
+      p,
+      div {
+        transform: translateY(10px);
+        opacity: 0;
       }
 
       p {
@@ -146,13 +154,17 @@ body {
     }
     #join-text {
       display: none;
-      opacity: 0;
+      opacity: 1;
       width: 300px;
-      transform: translateY(10px);
       background: linear-gradient(to right, rgba(255,255,255,1) 20%,rgba(255,255,255,0) 100%);
       padding: 50px;
       &.active {
         display: block;
+      }
+      p,
+      div {
+        transform: translateY(10px);
+        opacity: 0;
       }
     }
 

@@ -86,11 +86,15 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var mask = document.querySelector('#mask');
 var about = document.querySelector('#about');
 var maskText = document.querySelector('#mask-text');
+var maskTextInner = document.querySelectorAll('#mask-text p');
+console.log(maskTextInner);
 var joinText = document.querySelector('#about-text');
+var joinTextInner = document.querySelectorAll('#about-text p');
 var body = document.querySelector('body');
 var menuItems = document.querySelectorAll('.menu a');
 var signUp = document.querySelectorAll('#sign-up');
 var signUpText = document.querySelector('#join-text');
+var signUpTextInner = document.querySelectorAll('#join-text *');
 
 // [...menuItems].forEach(el => {
 //   el.addEventListener('click', function() {
@@ -106,19 +110,19 @@ var signUpText = document.querySelector('#join-text');
 var allText = [maskText, joinText, signUpText];
 
 mask.addEventListener('click', function () {
-  switchDisplay(this, maskText);
+  switchDisplay(this, maskText, maskTextInner);
 });
 
 about.addEventListener('click', function () {
-  switchDisplay(this, joinText);
+  switchDisplay(this, joinText, joinTextInner);
 });
 [].concat(_toConsumableArray(signUp)).forEach(function (s) {
   s.addEventListener('click', function () {
-    switchDisplay(this, signUpText);
+    switchDisplay(this, signUpText, signUpTextInner);
   });
 });
 
-var switchDisplay = function switchDisplay(clickedEl, targetEl) {
+var switchDisplay = function switchDisplay(clickedEl, targetEl, slideUpText) {
   if (clickedEl.classList.contains('active')) {
     // Clear state
     [].concat(allText).forEach(function (el) {
@@ -142,7 +146,10 @@ var switchDisplay = function switchDisplay(clickedEl, targetEl) {
       el.classList.remove('active');
     });
     clickedEl.classList.add('active');
-    targetEl.classList.add('active', 'slideUp');
+    targetEl.classList.add('active');
+    [].concat(_toConsumableArray(slideUpText)).forEach(function (el) {
+      el.classList.add('slideUp');
+    });
   }
 };
 

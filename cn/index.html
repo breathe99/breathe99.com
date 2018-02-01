@@ -36,8 +36,8 @@
         <a id="sign-up" class="button" href="#">即可参与了解更多</a>
       </div>
     </div>
-    <div class="middle hide-background">
-      <div class="middle__column text hide-text">
+    <div class="middle">
+      <div class="middle__column text">
         <div id="mask-text">
           <p>B99呼吸器 性能优越，具有创新型外观设计的雾霾防护轻型面具。</p>
           <p>用人体感觉舒适的聚硅氧烷密封胶和可更换的99%高效过滤器，B99可以给您提供最好的保护。智能的压力传感电路可以为您提供安全预警以保证最优的性能。</p>
@@ -80,7 +80,7 @@
                       <div class="lbl-tinyltr" style="clear: both; float: none; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
                         <br>
                       </div>
-                      <input type="text" name="email" id="email" value="" style="padding: 10px 4px; min-width: auto;">
+                      <input type="text" name="email" id="email" value="" style="padding: 10px 4px; min-width: auto;"  placeholder="email / 电子邮件">
                       <div style="clear:both;"></div>
                       <div class="hidden-btns">
                         <a class="btn move" href="#">
@@ -98,9 +98,9 @@
           </div>
         </div>
       </div>
-      <div class="video-wrapper">
+      <!-- <div class="video-wrapper">
         <iframe id="b99-video" width="560" height="315" src="https://www.youtube.com/embed/eUgJZr4lAqI?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
+      </div> -->
     </div>
     <div class="bottom">
       <div class="bottom__first">
@@ -131,26 +131,26 @@
     ga('send', 'pageview');
   </script>
   <script>
-    var player;
-    player = new YT.Player('b99-video', {
-        events: {
-          'onStateChange': onPlayerStateChange
-        }
-    });
-    function hideVideo() {
-      var middle = document.querySelector('.middle');
-      var middleText = document.querySelector('.middle__column');
-      var video = document.querySelector('.video-wrapper');
+    // var player;
+    // player = new YT.Player('b99-video', {
+    //     events: {
+    //       'onStateChange': onPlayerStateChange
+    //     }
+    // });
+    // function hideVideo() {
+    //   var middle = document.querySelector('.middle');
+    //   var middleText = document.querySelector('.middle__column');
+    //   var video = document.querySelector('.video-wrapper');
 
-      middle.classList.remove('hide-background');
-      middleText.classList.remove('hide-text');
-      video.style.display = 'none';
-    }
-    function onPlayerStateChange(event) {
-      if (event.data === 0) {
-        hideVideo();
-      }
-    }
+    //   middle.classList.remove('hide-background');
+    //   middleText.classList.remove('hide-text');
+    //   video.style.display = 'none';
+    // }
+    // function onPlayerStateChange(event) {
+    //   if (event.data === 0) {
+    //     hideVideo();
+    //   }
+    // }
   </script>
 </body>
 
